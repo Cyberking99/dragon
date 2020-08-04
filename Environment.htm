@@ -1,0 +1,246 @@
+<style type="text/css">
+pre.result {
+    padding: 5px;
+    font-size: 15px;
+    overflow-x: auto;
+}
+.result {
+    background: #eee !important;
+    border: 1px solid #d6d6d6 !important;
+}
+.pln {
+ color:#000
+}
+@media screen {
+ .str {
+  color:#080
+ }
+ .kwd {
+  color:#008
+ }
+ .com {
+  color:#800
+ }
+ .typ {
+  color:#606
+ }
+ .lit {
+  color:#066
+ }
+ .clo,
+ .opn,
+ .pun {
+  color:#660
+ }
+ .tag {
+  color:#008
+ }
+ .atn {
+  color:#606
+ }
+ .atv {
+  color:#080
+ }
+ .dec,
+ .var {
+  color:#606
+ }
+ .fun {
+  color:red
+ }
+}
+@media print,projection {
+ .kwd,
+ .tag,
+ .typ {
+  font-weight:700
+ }
+ .str {
+  color:#060
+ }
+ .kwd {
+  color:#006
+ }
+ .com {
+  color:#600;
+  font-style:italic
+ }
+ .typ {
+  color:#404
+ }
+ .lit {
+  color:#044
+ }
+ .clo,
+ .opn,
+ .pun {
+  color:#440
+ }
+ .tag {
+  color:#006
+ }
+ .atn {
+  color:#404
+ }
+ .atv {
+  color:#060
+ }
+}
+pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+.prettyprint {
+ background: #eee !important;
+ border: 1px solid #d6d6d6 !important;
+}
+pre.prettyprint {
+ padding:2px;
+ border:1px solid #888
+}
+ol.linenums {
+ margin-top:0;
+ margin-bottom:0
+}
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+ list-style-type:none
+}
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+ background:#eee
+}
+</style>
+<h1>Dragon Tutorials - Part 2: Setting Up Your Environment For Dragon</h1>
+<img src="https://img.imageupload.net/2020/07/16/carbon2.png" width="100%" height="300px">
+<p>Dragon is available for Windows, Android and most of the flavors of 
+Linux operating system. I am not sure if it has been made ready for MacOS - still under development.</p>
+<h2>Local Environment Setup</h2>
+<p>Open a terminal window and type "dragon" to find out if it is already installed and which version is installed.</p>
+<h2>Getting Dragon</h2>
+<p>Binaries of latest version of Dragon (Dragon 1.9.7) are available on <a href="https://www.dragon-lang.org/" target="_blank">this page</a></p>
+<p>The following different installation options are available.</p>
+<ul class="list">
+<a href="https://dragon-lang.org/dragon-197/" target="_blank"><b>Dragon 1.9.7</b></a>:
+<li>Dragon 1.9.7 for Windows (x86)</li>
+<li>Dragon 1.9.7 for Windows (x64)</li>
+<li>Dragon 1.9.7 for Linux (x86_64)</li>
+</ul>
+<ul class="list">
+<a href="https://dragon-lang.org/dragon-196/" target="_blank"><b>Dragon 1.9.6</b></a>:
+<li>Dragon 1.9.6 for Windows</li>
+<li>Dragon 1.9.6 for Linux</li>
+</ul>
+<ul class="list">
+<a href="https://dragon-lang.org/dragon-195/" target="_blank"><b>Dragon 1.9.5</b></a>:
+<li>Dragon 1.9.5 for Windows</li>
+<li>Dragon 1.9.5 for Linux</li>
+<li>Dragon 1.9.5 for MacOS</li>
+</ul>
+<ul class="list">
+<a href="https://dragon-lang.org/dragon-native/" target="_blank"><b>Dragon-native</b></a>:
+<li>Dragon-native 1.9.7 for Windows</li>
+<li>Dragon-native 1.9.7 for Linux (AArch64)</li>
+<li>Dragon-native 1.9.7 for Linux (x86_x64)</li>
+<li>Dragon-native 1.9.4 update for Windows</li>
+<li>Dragon-native 1.9.4 update for Linux (x86_x64)</li>
+<li>Dragon-native 1.9.4 for Windows</li>
+<li>Dragon-native 1.9.4 for Linux (AArch64)</li>
+<li>Dragon-native 1.9.4 for Linux (x86_x64)</li>
+<li>Dragon-native 1.9.4 for MacOS</li>
+</ul>
+<h3>Windows Environment</h3>
+<p>To install Dragon on your Windows, all you need to do is download the installtion file from <a href="https://dragon-lang.org/dragon-native/" target="_blank"><b>here</b></a> and run the downloaded file.<br>You can also download the IDE (ZDragon) from <a href="https://zdragon.dragon-lang.org/" target="_blank"><b>here</b></a>.</p>
+<h3>Linux Environment</h3>
+<p>Linux, you can install Dragon by downloading the zipped installer from the download URLs above. Then open your terminal and type the following:</p>
+<ul>
+<li>First, install the unzip package (skip this if you already have it installed).<br>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted" style=""><span style="color:#008;">$sudo</span> <span style="color:#606;">apt</span> <span style="color:#606;">install</span> <span style="color:#000;">unzip</span>
+</pre>
+</li>
+<li>Unzip the downloaded zip file.<br>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted"><span style="color:#000;">unzip</span> <span style="color:#606;">Dragon-linux</span><span style="color:#066;">1.9.7.zip</span>
+</pre>
+</li>
+<li>Navigate to the directory you unzipped the file.<br>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted"><span style="color:#008;">cd</span> <span style="color:#000;">Dragon-linux1.9.7</span>
+</pre>
+</li>
+<li>Change the file permission and make <em>install.sh</em> executable.<br>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted"><span style="color:#008;">chmod</span> <span style="color:#066;">+</span><span style="color:#000;">x install.sh</span>
+</pre>
+</li>
+<li>Then run your <em>install.sh</em>.<br>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted"><span style="color:#000;">./install.sh</span>
+</pre>
+</li>
+</ul>
+<p>To install <b>ZDragon IDE</b> on Linux, all you to do is to open you terminal and do this:</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted"><span style="color:#008;">wget</span> <span style="color:#000;">https://dragon-lang.org/installZDragon1.6</span></pre>
+<h3>Mac OS</h3>
+<ul>
+<li>Download the zipped Mac OS installer.</li>
+<li>Unzip the downloaded file.</li>
+<li>Double click this package file and follow the installation wizard instructions to install.</li>
+</ul>
+<h3>Linux AArch64 and Android (Userland or Termux)</h3>
+<p>For installing Dragon on Linux AArch64 and on Android (via Userland or Termux), you should simple run these commands in your terminal.</p>
+<ul>
+<li><pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted"><span style="color:#008;">wget</span> <span style="color:#000;">https://dragon-lang.org/installdragon-native</span></pre></li>
+<li><pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted"><span style="color:#008;">bash</span> <span style="color:#000;">installdragon-native</span></pre></li>
+</ul>
+<p>To test if your installations are successful, run this command in your terminal or cmd</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted">>> <span style="color:#008;">dragon</span></pre>
+<p>You will get an output similar to this:</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate prettyprinted"><span style="color:#008;">Dragon</span> <span style="color:#000;">version</span> <span style="color:#066;">1.9.7</span></pre>
+<h2>Running Dragon</h2>
+<p>There are three different ways to run Dragon:−</p>
+<h3>1. Interactive Interpreter</h3>
+<p>You can run Dragon from Unix, DOS, or any other system that provides you a command-line interpreter or shell window.</p>
+<p>Enter <b>dragon -sh</b> or <b>dragon --shell</b> in the command line.</p>
+<p>Start coding right away in the interactive interpreter.</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="result notranslate">kayda@kali:-$ dragon -sh             // Unix/Linux
+or
+kayda@kali:-$ dragon --shell             // Unix/Linux
+or
+C:&gt;dragon --sh           // Windows/DOS
+or
+C:\Users\kayda&gt;dragon --sh           // Windows/DOS
+</pre>
+<h3>2. Script from the Command-line</h3>
+<p>A Dragon script can be executed at the command line by invoking the 
+interpreter on your application, as shown in the following example.</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="result notranslate">kayda@kali:-$ dragon -r hello.dgn          // Unix/Linux
+or
+kayda@kali:-dragon --run hello.dgn           // Unix/Linux
+or 
+C:&gt;dragon -r hello.dgn         // Windows/DOS
+or 
+C:\Users\kayda&gt;dragon --run hello.dgn         // Windows/DOS
+</pre>
+<p>Here is the list of all the available command line options:−</p>
+<p>1. <b>-sh</b>,<b>--shell</b>:- Enter shell mode (use the terminal or command line to code).</p>
+<p>2. <b>-r</b>,<b>--run</b> [filename].dgn:- Run Dragon script from given file</p>
+<p>3. <b>-s</b>,<b>--showtime</b>:- Show elapsed time of parsing and executing of your Dragon script. (e.g. <em><b>C:\Users\kayda&gt;dragon -r hello.dgn -s</b></em>)</p>
+<p><b>Note</b> − Be sure the file permission mode allows execution.</p>
+<h3>3. Integrated Development Environment (IDE)</h3>
+<p>You can run Dragon from a Graphical User Interface (GUI) environment 
+as well, if you have a GUI application on your system that supports 
+Dragon.</p>
+<p><a href="https://zdragon.dragon-lang.org/" target="_blank"><b>ZDragon</b></a> − <b>ZDragon</b> is the first Windows and Linux IDE for Dragon.</p>
+<p>Also, With Dragon extension for <b>VSCode</b> (one of the most popular code editor), you can use VSCode to code your Dragon program(s).</p></li>
+<p>If you are not able to set up the environment properly, then you can 
+take the help of your system admin.<br>You can also setup and make sure Dragon environment is 
+properly set up and working perfectly fine.</p>
+<p>You can also use the Dragon Programming environment online, so that
+ you can execute all the available examples online. Check <a href="https://dragon-lang.org/run/" target="_blank">here</a> for Dragon Online IDE and you can also use <a href="https://repl.io/" target="_blank">Repl.io</a> which has support for Dragon.<br>Feel free to modify any example and execute it yourself.</p>
+ <p>In the next tutorial, we will start with the basic syntax of Dragon.</p>

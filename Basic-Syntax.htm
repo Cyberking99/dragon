@@ -1,0 +1,326 @@
+<style type="text/css">
+pre.result {
+  padding: 5px;
+  font-size: 15px;
+  overflow-x: auto;
+}
+.result {
+  background: #eee !important;
+  border: 1px solid #d6d6d6 !important;
+}
+.pln {
+ color:#000
+}
+@media screen {
+ .str {
+ color:#080
+ }
+ .kwd {
+ color:#008
+ }
+ .com {
+ color:#800
+ }
+ .typ {
+ color:#606
+ }
+ .lit {
+ color:#066
+ }
+ .clo,
+ .opn,
+ .pun {
+ color:#660
+ }
+ .tag {
+ color:#008
+ }
+ .atn {
+ color:#606
+ }
+ .atv {
+ color:#080
+ }
+ .dec,
+ .var {
+ color:#606
+ }
+ .fun {
+ color:red
+ }
+}
+@media print,projection {
+ .kwd,
+ .tag,
+ .typ {
+ font-weight:700
+ }
+ .str {
+ color:#060
+ }
+ .kwd {
+ color:#006
+ }
+ .com {
+ color:#600;
+ font-style:italic
+ }
+ .typ {
+ color:#404
+ }
+ .lit {
+ color:#044
+ }
+ .clo,
+ .opn,
+ .pun {
+ color:#440
+ }
+ .tag {
+ color:#006
+ }
+ .atn {
+ color:#404
+ }
+ .atv {
+ color:#060
+ }
+}
+pre {
+ font-family: monospace,monospace;
+ font-size: 1em;
+}
+.prettyprint {
+ background: #eee !important;
+ border: 1px solid #d6d6d6 !important;
+}
+pre.prettyprint {
+ padding:2px;
+ border:1px solid #888
+}
+ol.linenums {
+ margin-top:0;
+ margin-bottom:0
+}
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+ list-style-type:none
+}
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+ background:#eee
+}
+</style>
+<h1>Dragon Tutorials - Part 3: Basic Syntax</h1>
+<img src="https://img.imageupload.net/2020/07/22/carbon1.png" width="100%" height="300px">
+<p>The Dragon programming language has similarities to Dragon, Perl, C, and Java. 
+However, there are some definite differences between these languages.</p>
+<h2>First Dragon Program</h2>
+<p>Let us execute the programs in different modes of programming.</p>
+<h3>Interactive Mode Programming</h3>
+<p>Invoking the interpreter without passing a script file as a parameter brings up the following prompt −</p>
+<p>On Linux</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">kayda@kali:~$ dragon -sh
+
+Welcome to Dragon 1.9.7 Shell
+Type in expressions to have them evaluated.
+ :help - show help   :reset - clear buffer
+ :exit - exit REPL
+ 
+&gt;&gt;
+</pre>
+<p>On Windows:</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+
+C:\Users\kayda>dragon -sh
+Welcome to Dragon 1.9.7 Shell
+Type in expressions to have them evaluated.
+ :help - show help   :reset - clear buffer
+ :exit - exit REPL
+
+>>
+</pre>
+<p>Type the following text at the Dragon prompt and press Enter −</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">&gt;&gt; show "Hello, Dragon!"
+</pre>
+<p>This produces the following result:−</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="result notranslate">Hello, Dragon!
+</pre>
+<h3>Script Mode Programming</h3>
+<p>Invoking the interpreter with a script parameter begins execution of 
+the script and continues until the script is finished. When the script 
+is finished, the interpreter is no longer active.</p>
+<p>Let us write a simple Dragon program in a script. Dragon files have the extension <b>.dgn</b>. Type the following code in a file and save it as <em>test.dgn</em>:−</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">show "Hello, Dragon!"
+</pre>
+<p>I assume that you have the Dragon interpreter set in <b>PATH</b> variable. Now, try to run this program as follows:−</p>
+<p><b>On Linux</b></p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">$ dragon -r test.dgn 
+</pre>
+<p>This produces the following result:−</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="result notanslate">Hello, Dragon!
+</pre>
+<p><b>On Windows</b></p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">C:\Users\kayda&gt;dragon -r test.dgn
+</pre>
+<p>This produces the following result:−</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="result notanslate">Hello, Dragon!
+</pre>
+<h2>Dragon Identifiers</h2>
+<p>A Dragon identifier is a name used to identify a variable, function, 
+class, module or other object. An identifier starts with a letter A to Z
+ or a to z or an underscore (_) followed by zero or more letters, 
+underscores and digits (0 to 9).</p>
+<p>Dragon is a case sensitive programming language. 
+Thus, <b>King</b> and <b>king</b> are two different things.</p>
+<h2>Reserved Words</h2>
+<p>The following list shows the Dragon keywords. These are reserved 
+words and you cannot use them as constants or variables or any other 
+identifier names. All the Dragon keywords contain lowercase letters 
+only.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tbody><tr>
+<td>echo</td>
+<td>func</td>
+<td>case</td>
+</tr>
+<tr>
+<td>match</td>
+<td>sprintf</td>
+<td>do</td>
+</tr>
+<tr>
+<td>include</td>
+<td>for</td>
+<td>readln</td>
+</tr>
+<tr>
+<td>break</td>
+<td>match</td>
+<td>print</td>
+</tr>
+<tr>
+<td>class</td>
+<td>showln</td>
+<td>show</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>if</td>
+<td>return</td>
+</tr>
+<tr>
+<td>while</td>
+<td>select</td>
+<td>try</td>
+</tr>
+</tbody></table>
+<h2>Multi-Line Statements</h2>
+<p>Statements in Dragon typically end with a new line. Dragon, however, 
+allows the use of the line continuation character (\) to denote that the
+ line should continue. For example −</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">a = "Hello"
+b = "World!"
+test = a + \
+b
+show test
+</pre>
+<p>This will output:</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="result notanslate">HelloWorld!
+</pre>
+<p>The statements contained within the [], {}, or () brackets do not need to use the line continuation character. For example −</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+</pre>
+<h2>Quotation in Dragon</h2>
+<p>Dragon accepts single (') to denote integer and double (") quotes to denote string literals, as long as the same type of quote starts and ends the string.</p>
+<p>For example, all the following are legal −</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">number = '5'
+sentence = "This is a sentence."
+</pre>
+<p>Integers can also be denoted without quotes.</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">number = 5
+</pre>
+<h2>Comments in Dragon</h2>
+<p>Double forward slash (//) that is not inside a string literal is the beginning of a comment. All characters after // up to the end of the physical line, are part of the comment and the Dragon interpreter ignores them.</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">select "std"
+
+// First comment
+show "Hello, Dragon!" // second comment
+</pre>
+<p>This produces the following result −</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">Hello, Dragon!
+</pre>
+<p>You can type a comment on the same line after a statement or expression −</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">name = "Kingsley" // This is again comment
+</pre>
+<p>Dragon also have multiple-line commenting feature:−</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">/* This is
+
+multi-line
+
+comment.*/
+</pre>
+<h2>Blank Lines</h2>
+<p>A line containing only whitespace, possibly with a comment, is known as a blank line and Dragon totally ignores it.</p>
+<h2>Waiting for the User</h2>
+<p>The following line of the program displays the prompt and, the 
+statement saying “What is your name?”, and then waits for the 
+user to take action −</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">select "std"
+
+show "What is your name?"
+name = readln()
+</pre>
+<p>Here, <b><em>readln</em></b> is used to take input from the user. The input can be displayed by referencing the variable assinged to the readln() function.</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">select "std"
+
+show "What is your name?\n>> "
+name = readln()
+showln name
+</pre>
+<p>This will output:-</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">What is your name?
+<b>>> Cyberking</b>
+Cyberking
+</pre>
+<h2>Multiple Statements on a Single Line</h2>
+<p>The semicolon ( ; ) allows multiple statements on a single line given that no statement starts a new code block. Here is a sample snip using the semicolon −</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">select std; x = "foo"; show x
+</pre>
+<h2>Command Line Arguments</h2>
+<p>Many programs can be run to provide you with some basic information 
+about how they should be run. Dragon enables you to do this with -<b>sh</b>:−</p>
+<p>On Linux</p>
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">kayda@kali:~$ dragon
+Dragon version 1.9.7
+
+Usage: Dragon [options]
+ options:
+   -r, --run [input]  Run program file. Required.
+   -sh, --shell    Enter to shell mode
+   -s, --showtime   Show elapsed time of parsing and execution
+</pre>
+On Windows:
+<pre style="font-family: monospace,monospace;font-size: 1em; background: #eee !important; border: 1px solid #d6d6d6 !important;" class="prettyprint notranslate">Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+
+C:\Users\kayda>dragon
+Dragon version 1.9.7
+
+Usage: Dragon [options]
+ options:
+   -r, --run [input]  Run program file. Required.
+   -sh, --shell    Enter to shell mode
+   -s, --showtime   Show elapsed time of parsing and execution
+</pre>
+<p>You can also program your script in such a way that it should accept various options.</p>
